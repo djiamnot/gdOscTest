@@ -16,7 +16,7 @@ func _ready():
 
 
 func _on_OSCListener_osc_message(val):
-    rint(get_name(), " ", val)
+    print(get_name(), " ", val)
     print(val[0].right(1))
     if val[0].right(1).match(get_name()):
         print("matching name")

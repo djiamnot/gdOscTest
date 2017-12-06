@@ -1,4 +1,4 @@
-
+tool
 extends MeshInstance
 
 # class member variables go here, for example:
@@ -10,6 +10,7 @@ func _ready():
     # Initialization here
     pass
 
+
 func _on_OSCListener_osc_message(val):
     print(get_name(), " ", val)
     print(val[0].right(1))
@@ -18,7 +19,3 @@ func _on_OSCListener_osc_message(val):
         if val[1] == "pos":
             print("position")
             translate(Vector3(val[2], val[3], val[4]))
-
-
-func _on_OSCListener_tree_entered():
-	print("tree entered")

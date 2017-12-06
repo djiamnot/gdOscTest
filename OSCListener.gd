@@ -8,7 +8,8 @@ extends OSCListener
 func _ready():
     # Called every time the node is added to the scene.
     # Initialization here
-    self.setup(18002)
+    # set_port(18002)
+    pass
 
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
