@@ -88,7 +88,7 @@ script = ExtResource( 2 )
 
 [node name="OSCtransmitter" type="OSCtransmitter" parent="Position3D"]
 
-transform = Transform( 1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0 )
 script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
@@ -109,6 +109,8 @@ doppler/tracking = 0
 [node name="OSCListener" type="OSCListener" parent="."]
 
 port = 18002
+
+[connection signal="script_changed" from="Position3D/OSCtransmitter" to="Position3D/OSCtransmitter" method="_on_OSCtransmitter_script_changed"]
 
 [connection signal="osc_message" from="OSCListener" to="obj1" method="_on_OSCListener_osc_message"]
 

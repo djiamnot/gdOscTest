@@ -6,7 +6,7 @@ tool
 var new_sender = OSCtransmitter.new()
 
 func _ready():
-    new_sender.init("localhost", 9020)
+    
     var my_ar = []
     my_ar.append(1)
     my_ar.append("sd")
@@ -21,3 +21,6 @@ func _exit_tree():
 
     new_sender.sendMessage()
     new_sender.reset()
+
+func _on_OSCtransmitter_script_changed():
+    new_sender.init("localhost", 9020)
