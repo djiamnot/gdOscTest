@@ -1,5 +1,5 @@
 tool
-extends MeshInstance
+extends Spatial
 
 # class member variables go here, for example:
 # var a = 2
@@ -17,5 +17,5 @@ func _on_OSCListener_osc_message(val):
     if val[0].right(1).match(get_name()):
         print("matching name")
         if val[1] == "pos":
-            print("position")
+            print("position ", val[2], " ",val[3], " ", val[4])
             translate(Vector3(val[2], val[3], val[4]))
