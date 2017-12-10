@@ -1,26 +1,33 @@
 extends OSCtransmitter
-tool
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+
 var new_sender = OSCtransmitter.new()
+var parent
+
+signal exit()
 
 func _ready():
+    set_process(true)
+    set_notify_transform(true)
+    parent = get_parent()
+    print("parrent: ", parent)
+    new_sender.init("localhost", 9020)
+    # set_process_input(true)
     
-    var my_ar = []
-    my_ar.append(1)
-    my_ar.append("sd")
-    print("my arr, ", my_ar)
-
-func _exit_tree():
-
-    new_sender.setAddress("/satie")
-    new_sender.appendInt(2)
-    new_sender.appendFloat(3.14)
-    new_sender.appendString("boo")
-
+func _process(delta):
+    new_sender.setAddress("/satie/source/update")
+    new_sender.appendString(get_name())
+    new_sender.appendFloat(parent.translation.x)
+    new_sender.appendFloat(parent.translation.y)
+    new_sender.appendFloat(parent.translation.z)
     new_sender.sendMessage()
     new_sender.reset()
+    
+    #if NOTIFICATION_TRANSFORM_CHANGED:
+        #print("transform changed")
+       # emit_signal("exit")
 
-func _on_OSCtransmitter_script_changed():
-    new_sender.init("localhost", 9020)
+func _exit_tree():
+    emit_signal("exit")
+    
+    
+    
