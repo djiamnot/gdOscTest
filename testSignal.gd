@@ -22,6 +22,7 @@ func _on_osc_message(val):
     print("*************", val)
     
 func _input(event):
+    print("obj1:event:get_msg ", osc.osc_listener.get_msg());
     if event.is_action_pressed("ui_left"): 
         translate(Vector3(-5, 0, 0))
     if event.is_action_pressed("ui_right"): 

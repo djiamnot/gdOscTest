@@ -11,11 +11,22 @@ func _ready():
     # Initialization here
     self.connect("ready", self, "_on_ready")
     osc_listener  = OSCListener.new()
-    emit_signal("ready")
+    print("osc_listener instance: ", osc_listener)
+    osc_listener.connect("osc_listener_ready", self, "_on_osc_listener_ready")
+    osc_listener.connect("osc_message", self, "_on_osc_msg")
+    var conn = osc_listener.is_connected("osc_listener_ready", self, "_on_osc_listener_ready")
+    print("connected to signal: ", conn)
+    print("listener's port: ", osc_listener.get_port())
+    # emit_signal("ready")
 
+func _on_osc_listener_ready():
+    print("****************************")
+    
+func _on_osc_msg(val):
+    print("&&&&&&&&&&&&&&&&&&&&", val)
     
 func _process(delta):
-    if (osc_ready):
+    if(osc_ready):
         print("***")
         var msg = osc_listener.get_msg()
         print("received osc ", msg)
