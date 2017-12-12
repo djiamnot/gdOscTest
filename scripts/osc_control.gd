@@ -18,12 +18,7 @@ func _on_osc_message(val):
         if val[1] == "pos":
             translate(Vector3(val[2], val[3], val[4]))
     
-func _input(event):
-    print("obj1:event:get_msg ", osc.osc_listener.get_msg());
-    if event.is_action_pressed("ui_left"): 
-        translate(Vector3(-5, 0, 0))
-    if event.is_action_pressed("ui_right"): 
-        translate(Vector3(5, 0, 0))
+
         
 func _process(delta):
     pass

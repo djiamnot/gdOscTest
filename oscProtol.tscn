@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/listener.gd" type="Script" id=1]
 [ext_resource path="res://scripts/osc_control.gd" type="Script" id=2]
-[ext_resource path="res://scripts/osc_transmitter.gd" type="Script" id=3]
+[ext_resource path="res://scripts/actor.gd" type="Script" id=3]
+[ext_resource path="res://scripts/osc_transmitter.gd" type="Script" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -11,7 +12,14 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Scene" type="Spatial"]
+[sub_resource type="CapsuleMesh" id=2]
+
+radius = 1.0
+mid_height = 1.0
+radial_segments = 64
+rings = 8
+
+[node name="Scene-OSCListener" type="Spatial"]
 
 script = ExtResource( 1 )
 
@@ -33,14 +41,31 @@ material/0 = null
 script = ExtResource( 2 )
 _sections_unfolded = [ "material" ]
 
-[node name="Position3D" type="Position3D" parent="."]
+[node name="Actor" type="Position3D" parent="."]
 
 transform = Transform( 1, 0, 0, 0, -0.979968, -0.199153, 0, 0.199153, -0.979968, 0.564863, 0.0126346, -0.195749 )
+script = ExtResource( 3 )
 
-[node name="OSCtransmitter" type="OSCtransmitter" parent="Position3D"]
+[node name="MeshInstance" type="MeshInstance" parent="Actor"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="OSCtransmitter" type="OSCtransmitter" parent="Actor"]
 
 transform = Transform( 1, 0, 0, 0, 1, 1.04308e-07, 0, -1.04308e-07, 1, 0, -3.53903e-08, -6.98492e-09 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Camera" type="Camera" parent="."]
 

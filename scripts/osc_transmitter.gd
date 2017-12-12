@@ -7,9 +7,7 @@ signal exit()
 
 func _ready():
     set_process(true)
-    set_notify_transform(true)
     parent = get_parent()
-    print("parrent: ", parent)
     new_sender.init("localhost", 9020)
     
 func _process(delta):
