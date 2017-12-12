@@ -1,7 +1,6 @@
 extends MeshInstance
 
 var osc
-var _process_osc = false
            
 func _ready():
     # Called every time the node is added to the scene.
@@ -9,17 +8,15 @@ func _ready():
     set_process_input(true)
     set_process(true)
     osc = get_parent_spatial()
-    osc.connect("ready", self, "_on_scene_ready")
-
-func _on_scene_ready():
-    print("osc instance? ", osc.osc_listener)
-    if (osc.osc_listener):
-        _process_osc = true
-        osc.connect("osc_message", self, "_on_osc_message")
-    
+    osc.connect("osc_message", self, "_on_osc_message")
 
 func _on_osc_message(val):
-    print("*************", val)
+    print(get_name(), " ", val)
+    # print(val[0].right(1))
+    if val[0].right(1).match(get_name()):
+        print("matching name")
+        if val[1] == "pos":
+            translate(Vector3(val[2], val[3], val[4]))
     
 func _input(event):
     print("obj1:event:get_msg ", osc.osc_listener.get_msg());

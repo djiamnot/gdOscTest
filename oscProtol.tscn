@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://oscProtol.gd" type="Script" id=1]
-[ext_resource path="res://testSignal.gd" type="Script" id=2]
-[ext_resource path="res://scripts/oscreceive.gd" type="Script" id=3]
-[ext_resource path="res://test.gd" type="Script" id=4]
+[ext_resource path="res://scripts/listener.gd" type="Script" id=1]
+[ext_resource path="res://scripts/osc_control.gd" type="Script" id=2]
+[ext_resource path="res://scripts/osc_transmitter.gd" type="Script" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -37,12 +36,11 @@ _sections_unfolded = [ "material" ]
 [node name="Position3D" type="Position3D" parent="."]
 
 transform = Transform( 1, 0, 0, 0, -0.979968, -0.199153, 0, 0.199153, -0.979968, 0.564863, 0.0126346, -0.195749 )
-script = ExtResource( 3 )
 
 [node name="OSCtransmitter" type="OSCtransmitter" parent="Position3D"]
 
 transform = Transform( 1, 0, 0, 0, 1, 1.04308e-07, 0, -1.04308e-07, 1, 0, -3.53903e-08, -6.98492e-09 )
-script = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 
