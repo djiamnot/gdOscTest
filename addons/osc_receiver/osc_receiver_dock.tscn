@@ -1,6 +1,8 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="OSC server" type="Container" index="0"]
+[ext_resource path="res://addons/osc_receiver/OSCserver_button.gd" type="Script" id=1]
+
+[node name="OSC server" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -17,7 +19,23 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Size Flags", "Theme" ]
 
-[node name="Label" type="Label" parent="." index="0"]
+[node name="HSeparator" type="HSeparator" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10.0
+margin_top = 40.0
+margin_right = 140.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Label" type="Label" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -37,7 +55,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Container" type="Container" parent="." index="1"]
+[node name="Container" type="Container" parent="." index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -106,7 +124,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Button" type="Button" parent="." index="2"]
+[node name="OSCserver start" type="Button" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -129,21 +147,6 @@ group = null
 text = "start server"
 flat = false
 align = 1
-
-[node name="HSeparator" type="HSeparator" parent="." index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 10.0
-margin_top = 40.0
-margin_right = 140.0
-margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
+script = ExtResource( 1 )
 
 
