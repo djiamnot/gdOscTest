@@ -14,10 +14,6 @@ config/name="osc Proto"
 run/main_scene="res://oscProtol.tscn"
 config/icon="res://icon.png"
 
-[editor_plugins]
-
-enabled=PoolStringArray( "osc_receiver" )
-
 [export]
 
 Singletons=false
