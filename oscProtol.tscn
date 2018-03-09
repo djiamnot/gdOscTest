@@ -182,8 +182,4 @@ right_action = "ui_right"
 use_gui = true
 gui_action = "ui_cancel"
 
-[node name="OSCListener" type="OSCListener" parent="." index="4"]
-
-port = 18002
-
 
