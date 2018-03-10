@@ -8,7 +8,10 @@ func _ready():
     set_process_input(true)
     set_process(true)
     osc = get_parent_spatial()
+#    osc = get_node("OSCListener")
     osc.connect("osc_message", self, "_on_osc_message")
+    var osc_tool = get_tree()
+    print(osc_tool)
 
 func _on_osc_message(val):
     print(get_name(), " ", val)
