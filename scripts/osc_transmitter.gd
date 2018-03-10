@@ -12,7 +12,7 @@ func _ready():
     
 func _process(delta):
     new_sender.setAddress("/update")
-    new_sender.appendString(get_name())
+    new_sender.appendString(parent.get_name())
     new_sender.appendFloat(parent.translation.x)
     new_sender.appendFloat(parent.translation.y)
     new_sender.appendFloat(parent.translation.z)
