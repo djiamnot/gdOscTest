@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scripts/listener.gd" type="Script" id=1]
 [ext_resource path="res://meterials/patternl.material" type="Material" id=2]
-[ext_resource path="res://scripts/osc_control.gd" type="Script" id=3]
-[ext_resource path="res://scripts/actor.gd" type="Script" id=4]
+[ext_resource path="res://scripts/ActorReceiverCtrl.gd" type="Script" id=3]
+[ext_resource path="res://scripts/ActorSender.gd" type="Script" id=4]
 [ext_resource path="res://scripts/osc_transmitter.gd" type="Script" id=5]
 [ext_resource path="res://assets/1.5-UV-Test-Grid.png" type="Texture" id=6]
 [ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=7]
