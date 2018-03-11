@@ -10,4 +10,4 @@ Use two terminals for the following commands:
 
 Left/Right arrow moves the sphere (and the oscdump should reflect the `x` location change)
 
-The `pos` message, updates the location of the cube.
+The `pos` message sent to /ActorReceiver, updates the location of the cube.
