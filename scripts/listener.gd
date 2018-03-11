@@ -15,7 +15,7 @@ func _ready():
     
     # osc_message is a signal emitted on every reception of OSC message
     osc_listener.connect("osc_message", self, "_on_osc_msg")
-    # there is also 'osc_ready' signal for your c onvenience, emited as soon as the OSC receiver is
+    # there is also 'osc_ready' signal for your convenience, emited as soon as the OSC receiver is
     # successfully instantiated
     
 # I like to forward the message (at this time, I am considering this my top-level node and scenes
