@@ -6,12 +6,17 @@ path="res://.import/Duck.glb-4415da3ccad59a06cac60f8efa3b30b2.scn"
 
 [deps]
 
+source_file="res://asets/Duck.glb"
 source_md5="cf6b1c5e0b67500c2719e8c47b0e0493"
+
+dest_files=[ "res://.import/Duck.glb-4415da3ccad59a06cac60f8efa3b30b2.scn" ]
+dest_md5="6bfabc1747f182b677cc8d9437ad3ebc"
 
 [params]
 
 nodes/root_type="Spatial"
 nodes/root_name="Scene Root"
+nodes/root_scale=1.0
 nodes/custom_script=""
 nodes/storage=0
 materials/location=1
@@ -21,6 +26,7 @@ meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
 meshes/light_baking=0
+meshes/lightmap_texel_size=0.1
 external_files/store_in_subdir=false
 animation/import=true
 animation/fps=15
